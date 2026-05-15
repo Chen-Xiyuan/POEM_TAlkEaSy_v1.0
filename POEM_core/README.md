@@ -4,9 +4,9 @@ Platform Of Earth-system Models (POEM) core source code.
 
 This repository contains reusable source code only:
 
-- forcing readers
+- forcing helpers
 - variable registration helpers
-- solver wrappers
+- solver helpers
 - model input assembly helpers
 - result-processing helpers
 

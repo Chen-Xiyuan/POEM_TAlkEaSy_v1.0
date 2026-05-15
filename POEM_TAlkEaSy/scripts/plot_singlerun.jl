@@ -49,14 +49,14 @@ function plot_TAlkEaSy_singlerun(output;
                       label = ["DEGASS"],
                       legend = :topleft,)
 
-            # p02 = plot(x, [output.CO2_pulse];
-            #           xlim = xlim, 
-            #           title = "CO2_pulse",
-            #           label = ["CO2_pulse"],
-            #           legend = :topleft,)
+            p02 = plot(x, [output.CO2_pulse];
+                      xlim = xlim, 
+                      title = "CO2_pulse",
+                      label = ["CO2_pulse"],
+                      legend = :topleft,)
 
             fig = plot(
-                p01;
+                p01, p02;
                 layout = (pager.nrows, pager.ncols),
                 size = (1800, 900),
                 left_margin = 2mm,
