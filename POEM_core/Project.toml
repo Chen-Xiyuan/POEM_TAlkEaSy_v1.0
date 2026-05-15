@@ -1,0 +1,21 @@
+name = "POEMCore"
+uuid = "8fb6f2a5-74f0-4a41-8ab6-7e24364e7c3f"
+authors = ["Chen Xiyuan"]
+version = "0.1.5"
+
+[deps]
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Logging = "56ddb016-857b-54e1-b83d-db4d58db5568"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+SciMLBase = "0bca4576-84f4-4d90-8ffe-ffa030f20462"
+SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+Sundials = "c3572dad-4567-51f8-b174-8c6c989267f4"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+XLSX = "fdbf4ff8-1666-58a4-91e7-1b58723a45e0"
+
+[compat]
+DataFrames = "1"
+SciMLBase = "2"
+Sundials = "4"
+XLSX = "0.10"
+julia = "1.9, 1.10, 1.11"

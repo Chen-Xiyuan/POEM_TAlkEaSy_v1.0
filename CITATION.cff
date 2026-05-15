@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "POEM-TAlkEaSy v1.0: source code and input files for the GMD model description paper"
+message: "If you use this software, please cite it using the metadata from this file."
+type: software
+authors:
+  - family-names: Chen
+    given-names: Xiyuan
+version: "1.0.0"
+date-released: 2026-05-15
+repository-code: "https://github.com/Chen-Xiyuan/POEM_TAlkEaSy_v1.0"
+license: MIT
