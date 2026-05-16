@@ -90,7 +90,7 @@ const REGISTERED_OUTPUTS = make_registered_variables([
 
         :P,
         :AO2,
-        :OO2,
+        :MO2,
         :CO2,
         :DIC,
         :ORG,
@@ -112,7 +112,7 @@ const REGISTERED_OUTPUTS = make_registered_variables([
 
         :P_roc,
         :AO2_roc,
-        :OO2_roc,
+        :MO2_roc,
         :CO2_roc,
         :DIC_roc,
         :ORG_roc,
@@ -146,7 +146,7 @@ const REGISTERED_OUTPUTS = make_registered_variables([
 
         :P_norm,
         :AO2_norm,
-        :OO2_norm,
+        :MO2_norm,
         :CO2_norm,
         :DIC_norm,
         :ORG_norm,
@@ -476,45 +476,45 @@ function _core_calculations(t::Real, u::AbstractVector{<:Real}, ctx::ModelContex
     CO2_pulse         = F.CO2_pulse
 
     # ---- geological reservoir ----
-    P                =             float(u[1])                       ####    ocean [PO43-]sw reservoir (mol)
-    AO2              =             float(u[2])                       ####    atmosphere O2 reservoir (mol)
-    OO2              =             float(u[3])                       ####    ocean O2 reservoir (mol)
-    CO2              =             float(u[4])                       ####    atmosphere CO2 reservoir (mol)
-    DIC              =             float(u[5])                       ####    ocean [DIC]sw reservoir (mol)
-    ORG              =             float(u[6])                       ####    sediment crust organic matter (CH2O) reservoir (mol)
-    CARB             =             float(u[7])                       ####    sediment crust carbonate (CaCO3) reservoir (mol)
-    S                =             float(u[8])                       ####    ocean [SO42-]sw reservoir (mol)
-    PYR              =             float(u[9])                       ####    sediment crust pyrite (FeS2) reservoir (mol)
-    GYP              =             float(u[10])                      ####    sediment crust gypsum (CaSO4) reservoir (mol)
-    N                =             float(u[11])                      ####    ocean [NO3-]sw reservoir (mol)
-    Mg               =             float(u[12])                      ####    ocean [Mg2+]sw reservoir (mol)
-    Ca               =             float(u[13])                      ####    ocean [Ca2+]sw reservoir (mol)
-    Na               =             float(u[14])                      ####    ocean [Na+]sw reservoir (mol)
-    K                =             float(u[15])                      ####    ocean [K+]sw reservoir (mol)
-    Cl               =             float(u[16])                      ####    ocean [Cl-]sw reservoir (mol)
-    NaCl             =             float(u[17])                      ####    sediment crust NaCl reservoir (mol)
-    KCl              =             float(u[18])                      ####    sediment crust KCl reservoir (mol)
-    OSr              =             float(u[19])                      ####    ocean Sr reservoir (mol)
-    SSr              =             float(u[20])                      ####    sediment crust Sr reservoir (mol)
-    U                =             float(u[21])                      ####    ocean U reservoir (mol)
-    pH               =             float(u[22])                      ####    algebraic variable: seawater pH (initial guess in Solver.jl)
-    delta_13_CO2     =             float(u[23]) / CO2                ####    δ13/12C of atmosphere CO2 reservoir (‰, V-CDB)
-    delta_13_DIC     =             float(u[24]) / DIC                ####    δ13/12C of ocean DIC reservoir (‰, V-CDB)
-    delta_13_ORG     =             float(u[25]) / ORG                ####    δ13/12C of sediment crust organic matter reservoir (‰, V-CDB)
-    delta_13_CARB    =             float(u[26]) / CARB               ####    δ13/12C of sediment crust carbonate reservoir (‰, V-CDB)
-    delta_34_S       =             float(u[27]) / S                  ####    δ34/32S of ocean sulfate reservoir (‰, V-CDT)
-    delta_34_PYR     =             float(u[28]) / PYR                ####    δ34/32S of ocean sulfate reservoir (‰, V-CDT)
-    delta_34_GYP     =             float(u[29]) / GYP                ####    δ34/32S of ocean sulfate reservoir (‰, V-CDT)
-    delta_26_Mg      =             float(u[30]) / Mg                 ####    δ26/24Mg of ocean magnesium reservoir (‰, DSM-3)
-    delta_44_Ca      =             float(u[31]) / Ca                 ####    δ44/40Ca of ocean calcium reservoir (‰, NIST-SRM915a)
-    delta_87_OSr     =             float(u[32]) / OSr                ####    87/86Sr of ocean strontium reservoir (‰, )
-    delta_87_SSr     =             float(u[33]) / SSr                ####    87/86Sr of sediment crust strontium reservoir (‰, )
-    delta_238_U      =             float(u[34]) / U                  ####    δ238/235U of ocean uranium reservoir (‰, )
+    P                =             float(u[1])                       ####    
+    AO2              =             float(u[2])                       ####    
+    MO2              =             float(u[3])                       ####    
+    CO2              =             float(u[4])                       ####    
+    DIC              =             float(u[5])                       ####    
+    ORG              =             float(u[6])                       ####    
+    CARB             =             float(u[7])                       ####    
+    S                =             float(u[8])                       ####    
+    PYR              =             float(u[9])                       ####    
+    GYP              =             float(u[10])                      ####    
+    N                =             float(u[11])                      ####    
+    Mg               =             float(u[12])                      ####    
+    Ca               =             float(u[13])                      ####    
+    Na               =             float(u[14])                      ####    
+    K                =             float(u[15])                      ####    
+    Cl               =             float(u[16])                      ####    
+    NaCl             =             float(u[17])                      ####    
+    KCl              =             float(u[18])                      ####    
+    OSr              =             float(u[19])                      ####    
+    SSr              =             float(u[20])                      ####    
+    U                =             float(u[21])                      ####    
+    pH               =             float(u[22])                      ####    
+    delta_13_CO2     =             float(u[23]) / CO2                ####    
+    delta_13_DIC     =             float(u[24]) / DIC                ####    
+    delta_13_ORG     =             float(u[25]) / ORG                ####    
+    delta_13_CARB    =             float(u[26]) / CARB               ####    
+    delta_34_S       =             float(u[27]) / S                  ####    
+    delta_34_PYR     =             float(u[28]) / PYR                ####    
+    delta_34_GYP     =             float(u[29]) / GYP                ####    
+    delta_26_Mg      =             float(u[30]) / Mg                 ####   
+    delta_44_Ca      =             float(u[31]) / Ca                 ####    
+    delta_87_OSr     =             float(u[32]) / OSr                ####    
+    delta_87_SSr     =             float(u[33]) / SSr                ####    
+    delta_238_U      =             float(u[34]) / U                  ####    
 
     # ---- all reservoir normalized values ----
     P_norm      =    P / p.P0
     DIC_norm    =    DIC / p.DIC0
-    OO2_norm    =    OO2 / p.OO20
+    MO2_norm    =    MO2 / p.MO20
     ORG_norm    =    ORG / p.ORG0
     CARB_norm   =    CARB / p.CARB0
     S_norm      =    S / p.S0
@@ -699,7 +699,7 @@ function _core_calculations(t::Real, u::AbstractVector{<:Real}, ctx::ModelContex
     lob_C = p.k_lob_C * lob_C_relative
 
     # ---- Sulfur burial ----
-    mpb_S_relative = (S / p.S0) * (p.OO20 / OO2) * mob_C_relative
+    mpb_S_relative = (S / p.S0) * (p.MO20 / MO2) * mob_C_relative
 
     mgb_relative = (S / p.S0) * (Ca / p.Ca0)
 
@@ -914,7 +914,7 @@ function _core_calculations(t::Real, u::AbstractVector{<:Real}, ctx::ModelContex
     O2aq_conc_eqb  =  p.K_0_O2 * AO2atm
 
     #  mol * m^-3    =  (mol * m^-3 * atm^-1) * atm 
-    O2aq_conc_molm3  =  OO2 / p.vol_1box
+    O2aq_conc_molm3  =  MO2 / p.vol_1box
 
     #        mol      =    (mol * m^-3) * (m * yr^-1) * (m^2)             
     transfer_atm_O2  =  O2aq_conc_eqb * p.vpiston * p.area_1box
@@ -1085,7 +1085,7 @@ function _core_calculations(t::Real, u::AbstractVector{<:Real}, ctx::ModelContex
               (15 / 8) * (pyrw + pyrdeg) -
               f_airsea_O2
 
-    OO2_roc = mob_C +
+    MO2_roc = mob_C +
               (15 / 8) * mpb_S +
               f_airsea_O2
 
@@ -1229,7 +1229,7 @@ function TAlkEaSy_DAE!(out, du, u, ctx::ModelContext, t)
         # ---- Reservoir equations ----
         out[1]  = du[1]  - c.P_roc
         out[2]  = du[2]  - c.AO2_roc
-        out[3]  = du[3]  - c.OO2_roc
+        out[3]  = du[3]  - c.MO2_roc
         out[4]  = du[4]  - c.CO2_roc
         out[5]  = du[5]  - c.DIC_roc
         out[6]  = du[6]  - c.ORG_roc

@@ -1,11 +1,6 @@
 # Julia generated files
 POEM_TAlkEaSy/Manifest.toml
 
-# results and temporary outputs
-POEM_TAlkEaSy/results/
-results/
-*.csv
-
 # OS/editor files
 .DS_Store
 Thumbs.db

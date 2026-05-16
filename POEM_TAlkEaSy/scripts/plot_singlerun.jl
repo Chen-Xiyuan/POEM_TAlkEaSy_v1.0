@@ -147,7 +147,6 @@ function plot_TAlkEaSy_singlerun(output;
                       label = ["AO2atm"],
                       legend = :topleft,)
 
-
             p04 = plot(x, hcat(output.GMST_C,); 
                       xlim = xlim, 
                       title = "GMST_C", 

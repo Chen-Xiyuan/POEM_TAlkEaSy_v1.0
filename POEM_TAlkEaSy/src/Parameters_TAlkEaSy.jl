@@ -21,7 +21,7 @@ Base.@kwdef struct Pars
     ####-------------------------------------####
     P0::Float64
     AO20::Float64
-    OO20::Float64
+    MO20::Float64
     CO20::Float64
     DIC0::Float64
     ORG0::Float64
@@ -269,7 +269,7 @@ Base.@kwdef struct Pars
     ####---------------------------------####
     P_initial::Float64
     AO2_initial::Float64
-    OO2_initial::Float64
+    MO2_initial::Float64
     CO2_initial::Float64
     DIC_initial::Float64
     ORG_initial::Float64
@@ -325,7 +325,7 @@ function default_parameters()
     ####-------------------####
     P0     =  3.100e15                 
     AO20   =  3.665e19                 
-    OO20   =  3.340e17                 
+    MO20   =  3.340e17                 
     CO20   =  4.956e16                 
     DIC0   =  2.600e18                 
     ORG0   =  12.500e20                
@@ -577,7 +577,7 @@ function default_parameters()
     ####--------------------------------####
     P_initial = P0
     AO2_initial = AO20
-    OO2_initial = OO20
+    MO2_initial = MO20
     CO2_initial = CO20
     DIC_initial = DIC0
     ORG_initial = ORG0
@@ -614,7 +614,7 @@ function default_parameters()
         ####-------------------------------####
         P0 = P0,
         AO20 = AO20,
-        OO20 = OO20,
+        MO20 = MO20,
         CO20 = CO20,
         DIC0 = DIC0,
         ORG0 = ORG0,
@@ -876,7 +876,7 @@ function default_parameters()
         ####---------------------------------####
         P_initial = P_initial,
         AO2_initial = AO2_initial,
-        OO2_initial = OO2_initial,
+        MO2_initial = MO2_initial,
         CO2_initial = CO2_initial,
         DIC_initial = DIC_initial,
         ORG_initial = ORG_initial,
@@ -908,7 +908,7 @@ function default_initial_state(pars::Pars; tuning=nothing)
 
     u0[1]  = pars.P_initial                  
     u0[2]  = pars.AO2_initial                
-    u0[3]  = pars.OO2_initial                
+    u0[3]  = pars.MO2_initial                
     u0[4]  = pars.CO2_initial                
     u0[5]  = pars.DIC_initial                
     u0[6]  = pars.ORG_initial                
