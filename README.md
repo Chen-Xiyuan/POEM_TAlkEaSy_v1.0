@@ -4,7 +4,7 @@ developed by Xiyuan Chen (xiyuanchenemail@gmail.com)
 
 supported by Ph.D. supervisor Prof. Tim Lenton (T.M.Lenton@exeter.ac.uk)
 
-Related paper: Chen and Lenton, TAlkEaSy: the Total Alkalinity Earth System Model v1.0 for exploring climate, redox and ocean chemistry over geologic time,  
+Related paper: Chen and Lenton, TAlkEaSy: the Total Alkalinity Earth System Model v1.0 for exploring climate, redox and ocean chemistry over geologic time.
 
 
 This repository contains the exact code and input files used for the GMD model description paper.
